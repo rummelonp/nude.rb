@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
 
-module Nude
+class Nude
   VERSION = '0.0.1'
 end
