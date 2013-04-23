@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.version       = Nude::VERSION
   spec.authors       = ['Kazuya Takeshima']
   spec.email         = ['mail@mitukiii.jp']
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{Port of nude.js to Ruby.}
+  spec.summary       = %q{Port of nude.js to Ruby.}
   spec.homepage      = ''
   spec.license       = 'MIT'
 

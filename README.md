@@ -1,6 +1,8 @@
 # Nude
 
-TODO: Write a gem description
+Port of [nude.js][nudejs] to Ruby.
+
+[nudejs]: http://www.patrick-wied.at/static/nudejs/
 
 ## Installation
 
@@ -18,7 +20,16 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+puts Nude.nude?('/path/to/image1.jpg')
+# => true
+
+n = Nude.parse('/path/to/image2.jpg')
+puts n.nude?
+# => false
+puts n.inspect
+# => #<Nude @result=false, @message="Total skin parcentage lower than 15 (10%)", @image=/path/to/image2.jpg JPEG 500x375 500x375+0+0 DirectClass 8-bit 108kb>
+```
 
 ## Contributing
 
@@ -27,3 +38,9 @@ TODO: Write usage instructions here
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## Copyright
+
+Copyright (c) 2012 [Kazuya Takeshima](mailto:mail@mitukiii.jp). See [LICENSE][license] for details.
+
+[license]: LICENSE.md
