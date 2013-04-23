@@ -4,6 +4,10 @@ Port of [nude.js][nudejs] to Ruby.
 
 [nudejs]: http://www.patrick-wied.at/static/nudejs/
 
+## Requirements
+
+* ImageMagick
+
 ## Installation
 
 Add this line to your application's Gemfile:
