@@ -3,16 +3,25 @@
 require 'RMagick'
 
 class Nude
+  # Custom error class for rescuing from all Nude errors
   class NudeError < StandardError
   end
 
   Skin = Struct.new(:id, :skin, :region, :x, :y, :checked)
 
   class << self
+    # @param path_or_io [String, IO, Magick::Image]
+    # @return [Boolean]
+    # @example
+    #   Nude.nude?('/path/to/image.jpg')
     def nude?(path_or_io)
       parse(path_or_io).nude?
     end
 
+    # @param path_or_io [String, IO, Magick::Image]
+    # @return [Nude]
+    # @example
+    #   Nude.parse?('/path/to/image.jpg')
     def parse(path_or_io)
       new(path_or_io).parse
     end
@@ -20,13 +29,17 @@ class Nude
     private :new
   end
 
+  # @return [Magick::Image]
   attr_reader :image
 
+  # @return [Boolean]
   attr_reader :result
   alias_method :nude?, :result
 
+  # @return [String]
   attr_reader :message
 
+  # @private
   def initialize(path_or_io)
     # get the image data
     @image = (
@@ -55,6 +68,7 @@ class Nude
     @message = nil
   end
 
+  # @return [Nude]
   def parse
     return self unless @result.nil?
 
@@ -112,6 +126,7 @@ class Nude
     self
   end
 
+  # @private
   def inspect
     variables = [:@result, :@message, :@image].map { |key|
       key.to_s + "=" + instance_variable_get(key).inspect
