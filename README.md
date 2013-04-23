@@ -25,6 +25,8 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
+require 'nude'
+
 puts Nude.nude?('/path/to/image1.jpg')
 # => true
 
